@@ -83,33 +83,33 @@ public class ConfigurableElytraNerfs extends JavaPlugin implements CommandExecut
         int icarus_hit_per_sec = (int)Math.round(conf_icarus_hit*2/432.0*100);
         
         String icarus_warn_prefix=
-            "["+
-            ChatColor.BLUE+"CEN"+
-            ChatColor.RESET+"/"+
-            ChatColor.AQUA+"ICARUS"+
-            ChatColor.RESET+"] ";
+            ""+
+            ChatColor.BLUE+""+
+            ChatColor.RESET+""+
+            ChatColor.AQUA+""+
+            ChatColor.RESET+"";
         String icarus_warn_line1=
             icarus_warn_prefix+
-            ChatColor.RED+ChatColor.BOLD+"!!! YOUR WINGS ARE MELTING !!!"+
+            ChatColor.RED+ChatColor.BOLD+""+
             ChatColor.RESET;
         String icarus_warn_line2;
         if (conf_icarus_allow_nether){
             icarus_warn_line2=
                 icarus_warn_prefix+
                 ChatColor.GRAY+ChatColor.ITALIC+
-                "When flying under direct sunlight,"+
+                ""+
                 ChatColor.RESET;
         }else{
             icarus_warn_line2=
                 icarus_warn_prefix+
                 ChatColor.GRAY+ChatColor.ITALIC+
-                "When flying under direct sunlight (or in nether),"+
+                ""+
                 ChatColor.RESET;
         }
         String icarus_warn_line3=
             icarus_warn_prefix+
             ChatColor.GRAY+ChatColor.ITALIC+
-            "Your elytra will take "+icarus_hit_per_sec+"% damage every second."+
+            ""+icarus_hit_per_sec+""+
             ChatColor.RESET;
         
         
@@ -179,13 +179,11 @@ public class ConfigurableElytraNerfs extends JavaPlugin implements CommandExecut
                                 pinv.setChestplate(chestplate);
                                 
                                 if (rateLimitMsg("Icarus",pname,10000)){
-                                    p.sendMessage(icarus_warn_line1);
-                                    p.sendMessage(icarus_warn_line2);
-                                    p.sendMessage(icarus_warn_line3);
+                                   
                                 }
                                 p.sendTitle(
                                         " ", //title
-                                        ChatColor.RED+"Elytra "+Math.round(durabilityRatio*100)+"%", //subtitle
+                                        ChatColor.RED+"Элитры "+Math.round(durabilityRatio*100)+"%", //subtitle
                                         0, //fadein, ticks
                                         20, //sustain, ticks
                                         20); //FadeOut, ticks
@@ -280,13 +278,13 @@ public class ConfigurableElytraNerfs extends JavaPlugin implements CommandExecut
         double conf_tv_maxvel_mpt = conf_tv_maxvel_mps/20.0;
          
         String termvel_warn=
-            "["+
-            ChatColor.BLUE+"CEN"+
-            ChatColor.RESET+"/"+
-            ChatColor.AQUA+"TerminalVelocity"+
+            ""+
+            ChatColor.BLUE+""+
+            ChatColor.RESET+""+
+            ChatColor.AQUA+""+
             ChatColor.RESET+"] "+
-            ChatColor.RED+"Max elytra speed is "+
-            ChatColor.BOLD+conf_tv_maxvel_mps+"m/s"+
+            ChatColor.RED+""+
+            ChatColor.BOLD+conf_tv_maxvel_mps+""+
             ChatColor.RESET;
         
         Listener termvelListener = new Listener(){
